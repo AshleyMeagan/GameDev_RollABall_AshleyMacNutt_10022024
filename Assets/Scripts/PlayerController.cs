@@ -7,6 +7,7 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
 public TMP_Text countText;
+public TMP_Text winText;
 
 public float speed = 0;
     private Rigidbody rb;
@@ -19,6 +20,7 @@ public float speed = 0;
         count = 0;
         SetCountText();
         rb = GetComponent <Rigidbody>();
+        winText.gameObject.SetActive(false);
     }
 void OnMove (InputValue movementValue)
 {
@@ -43,6 +45,10 @@ void OnTriggerEnter(Collider other)
 }
 void SetCountText(){
     countText.text = "Count" + count.ToString();
+    if (count >= 12)
+    {
+        winText.gameObject.SetActive(true);
+    }
 }
 
 }
