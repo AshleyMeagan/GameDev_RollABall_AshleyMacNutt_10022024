@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+public TMP_Text countText;
+
 public float speed = 0;
     private Rigidbody rb;
     private int count;
@@ -14,6 +17,7 @@ public float speed = 0;
     void Start()
     {
         count = 0;
+        SetCountText();
         rb = GetComponent <Rigidbody>();
     }
 void OnMove (InputValue movementValue)
@@ -34,7 +38,12 @@ void OnTriggerEnter(Collider other)
 {
     other.gameObject.SetActive(false);
     count++;
+    SetCountText();
 }
 }
+void SetCountText(){
+    countText.text = "Count" + count.ToString();
+}
+
 }
 
