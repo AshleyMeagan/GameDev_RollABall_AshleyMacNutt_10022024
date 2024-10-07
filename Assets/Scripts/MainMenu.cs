@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         // Replace "GameScene" with the name of the scene where the game is located
-        SceneManager.LoadScene("MiniGame");
+        SceneManager.LoadScene("Story");
     }
 
     // This method will be called when the Quit button is pressed
