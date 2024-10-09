@@ -6,50 +6,71 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-public TMP_Text countText;
-public TMP_Text winText;
+    public TMP_Text countText;     // Text for first collectable (Bottles)
+    public TMP_Text coinCountText; // Text for second collectable (Coins)
+    public TMP_Text winText;
 
-public float speed = 0;
+    public float speed = 0;
     private Rigidbody rb;
-    private int count;
+    private int count;       // Counter for first collectable (Bottles)
+    private int coinCount;   // Counter for second collectable (Coins)
     private float movementX;
     private float movementY;
-    // Start is called before the first frame update
+
     void Start()
     {
         count = 0;
+        coinCount = 0;  // Initialize the second counter
         SetCountText();
-        rb = GetComponent <Rigidbody>();
+        SetCoinCountText();  // Initialize the second counter text
+
+        rb = GetComponent<Rigidbody>();
         winText.gameObject.SetActive(false);
     }
-void OnMove (InputValue movementValue)
-{
-Vector2 movementVector = movementValue.Get<Vector2>();
 
-movementX = movementVector.x;
-movementY = movementVector.y;
-}
-void FixedUpdate()
-{
-    Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-    rb.AddForce(movement * speed);
-}
-void OnTriggerEnter(Collider other)
-{
-    if (other.gameObject.CompareTag("PickUp")) 
-{
-    other.gameObject.SetActive(false);
-    count++;
-    SetCountText();
-}
-}
-void SetCountText(){
-    countText.text = "Count" + count.ToString();
-    if (count >= 12)
+    void OnMove(InputValue movementValue)
     {
-        winText.gameObject.SetActive(true);
+        Vector2 movementVector = movementValue.Get<Vector2>();
+
+        movementX = movementVector.x;
+        movementY = movementVector.y;
+    }
+
+    void FixedUpdate()
+    {
+        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        rb.AddForce(movement * speed);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PickUp"))  // For Bottles
+        {
+            other.gameObject.SetActive(false);
+            count++;
+            SetCountText();
+        }
+        else if (other.gameObject.CompareTag("CoinPickUp"))  // For Coins
+        {
+            other.gameObject.SetActive(false);
+            coinCount++;
+            SetCoinCountText();
+        }
+    }
+
+    // Update UI for bottle collectables
+    void SetCountText()
+    {
+        countText.text = "Bottles collected: " + count.ToString();
+        if (count >= 12)
+        {
+            winText.gameObject.SetActive(true);
+        }
+    }
+
+    // Update UI for coin collectables
+    void SetCoinCountText()
+    {
+        coinCountText.text = "Snacks collected: " + coinCount.ToString();
     }
 }
-
-}
-
