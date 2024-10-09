@@ -44,15 +44,22 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Trigger Entered: " + other.gameObject.name);
+
         if (other.gameObject.CompareTag("PickUp"))  // For Bottles
         {
+            Debug.Log("Picked up a bottle!");
             other.gameObject.SetActive(false);
             count++;
             SetCountText();
         }
         else if (other.gameObject.CompareTag("CoinPickUp"))  // For Coins
         {
-            other.gameObject.SetActive(false);
+            Debug.Log("Picked up a coin! Attempting to deactivate...");
+            other.transform.parent.gameObject.SetActive(false);
+
+            Debug.Log("Coin deactivated: " + other.gameObject.activeSelf);
+
             coinCount++;
             SetCoinCountText();
         }
@@ -72,5 +79,6 @@ public class PlayerController : MonoBehaviour
     void SetCoinCountText()
     {
         coinCountText.text = "Snacks collected: " + coinCount.ToString();
+        Debug.Log("Coin count updated: " + coinCount);
     }
 }
