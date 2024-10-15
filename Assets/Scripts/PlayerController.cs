@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Bottles collected: " + count.ToString();
-        if (count >= 12)
+        if (count >= 9)
         {
             winText.gameObject.SetActive(true);
         }
