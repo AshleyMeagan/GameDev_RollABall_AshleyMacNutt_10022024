@@ -277,7 +277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 40}
+  m_AnchoredPosition: {x: 230, y: 73}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &249703453
@@ -352,7 +352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -318, y: -7}
+  m_AnchoredPosition: {x: -318, y: 19}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419557519
@@ -391,10 +391,17 @@ MonoBehaviour:
     is left
 
 
-    Please  don''t get too distracted by snacks and forget my bottles!
+    When you''re done collecting my bottles, find the transparent purple
+    portal
 
-    Also!
-    Keep an eye out for Froggos. They''re not very nice.'
+    to go to the next area. There are three areas I''ve left my bottles.
+
+
+    Please 
+    don''t get too distracted by snacks and forget my bottles!
+
+    Also! Keep an
+    eye out for Froggos. They''re not very nice.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -632,7 +639,7 @@ RectTransform:
   m_GameObject: {fileID: 685781299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.1337, y: 2.728, z: 1}
+  m_LocalScale: {x: 7.1337, y: 3.3450735, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 191586459}
@@ -1108,7 +1115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -1.458, y: -2.764, z: 25.186}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -317, y: 127}
+  m_AnchoredPosition: {x: -317, y: 156}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &997542484
