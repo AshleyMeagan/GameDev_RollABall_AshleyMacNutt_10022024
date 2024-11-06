@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     {
  // Get and store the NavMeshAgent component attached to this object.
         navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.stoppingDistance = 1.0f;
     }
 
  // Update is called once per frame.
